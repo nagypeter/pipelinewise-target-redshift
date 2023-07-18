@@ -126,6 +126,7 @@ def persist_lines(config, lines, table_cache=None) -> None:
 
     # Loop over lines from stdin
     for line in lines:
+        print(f'LINE============{line}')
         try:
             o = json.loads(line)
         except json.decoder.JSONDecodeError:
