@@ -126,7 +126,7 @@ def persist_lines(config, lines, table_cache=None) -> None:
 
     # Loop over lines from stdin
     for line in lines:
-        print(f'LINE============{line}')
+
         try:
             o = json.loads(line)
         except json.decoder.JSONDecodeError:
@@ -346,7 +346,7 @@ def flush_streams(
 
 
 def load_stream_batch(stream, records_to_load, row_count, db_sync, delete_rows=False, compression=None, slices=None, temp_dir=None):
-    # Load into redshift                                            
+    # Load into redshift
     try:
         if row_count[stream] > 0:
             flush_records(stream, records_to_load, row_count[stream], db_sync, compression, slices, temp_dir)
